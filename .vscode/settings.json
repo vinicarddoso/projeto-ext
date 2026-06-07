@@ -1,0 +1,7 @@
+{
+    "editor.inlineSuggest.edits.allowCodeShifting": "never",
+    "editor.inlineSuggest.experimental.showOnSuggestConflict": "never",
+    "editor.inlineSuggest.edits.showLongDistanceHint": false,
+    "editor.inlineSuggest.edits.renderSideBySide": "never",
+    "js/ts.suggest.enabled": false
+}
