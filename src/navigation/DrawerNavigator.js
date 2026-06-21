@@ -13,7 +13,7 @@ export default function DrawerNavigator() {
       screenOptions={{
         headerTitle: () => (
           <TextInput
-            placeholder="🔍 Pesquisar produtos..."
+            placeholder="Pesquisar por produtos..."
             style={{
               backgroundColor: "#f2f2f2",
               width: 250,
@@ -32,7 +32,7 @@ export default function DrawerNavigator() {
 
       <Drawer.Screen
         name="Extensão de Cílios"
-        component={ProductsScreen}
+        component={ProductScreen}
         initialParams={{
           category: "Extensão de Cílios",
         }}
@@ -40,7 +40,7 @@ export default function DrawerNavigator() {
 
       <Drawer.Screen
         name="Body Splash"
-        component={ProductsScreen}
+        component={ProductScreen}
         initialParams={{
           category: "Body Splash",
         }}
@@ -48,7 +48,7 @@ export default function DrawerNavigator() {
 
       <Drawer.Screen
         name="Kits"
-        component={ProductsScreen}
+        component={ProductScreen}
         initialParams={{
           category: "Kits",
         }}
@@ -56,7 +56,7 @@ export default function DrawerNavigator() {
 
       <Drawer.Screen
         name="Acessórios"
-        component={ProductsScreen}
+        component={ProductScreen}
         initialParams={{
           category: "Acessórios",
         }}
