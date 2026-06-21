@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+
+import { styles } from '../styles';
 
 export default function ProductScreen({ route }) {
   const category = route?.params?.category || "Produtos";
@@ -42,7 +44,7 @@ export default function ProductScreen({ route }) {
   const renderItem = ({ item }) => (
     // FIREBASE: Futuramente pode navegar para ProductScreen
     // enviando o ID do produto.
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={styles.product}>
       
       {/* FIREBASE: Substituir este placeholder pela imagem
           armazenada no Firestore ou Storage. */}
@@ -83,46 +85,3 @@ export default function ProductScreen({ route }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 15,
-  },
-
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
-
-  card: {
-    flex: 1,
-    backgroundColor: "#fff",
-    borderRadius: 12,
-    padding: 10,
-    margin: 10,
-    borderWidth: 1,
-    borderColor: "#ddd",
-  },
-
-  imagePlaceholder: {
-    height: 100,
-    borderRadius: 10,
-    backgroundColor: "#f2f2f2",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 10,
-  },
-
-  productName: {
-    fontSize: 13,
-    fontWeight: "600",
-  },
-
-  price: {
-    marginTop: 5,
-    fontSize: 16,
-    fontWeight: "bold"
-  },
-});

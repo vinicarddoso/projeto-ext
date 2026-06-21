@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeScreen from '../screens/HomeScreen';
 import ProductScreen from '../screens/ProductScreen';
+import { styles } from '../styles';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,12 +27,13 @@ export default function DrawerNavigator() {
       }}
     >
       <Drawer.Screen
-        name="Home"
+        name="PÁGINA PRINCIPAL"
         component={HomeScreen}
+        styles={styles.price}
       />
 
       <Drawer.Screen
-        name="Extensão de Cílios"
+        name="EXTENSÃO DE CÍLIOS"
         component={ProductScreen}
         initialParams={{
           category: "Extensão de Cílios",
@@ -39,7 +41,7 @@ export default function DrawerNavigator() {
       />
 
       <Drawer.Screen
-        name="Body Splash"
+        name="BODY SPLASHES"
         component={ProductScreen}
         initialParams={{
           category: "Body Splash",
@@ -47,7 +49,7 @@ export default function DrawerNavigator() {
       />
 
       <Drawer.Screen
-        name="Kits"
+        name="KITS"
         component={ProductScreen}
         initialParams={{
           category: "Kits",
@@ -55,7 +57,7 @@ export default function DrawerNavigator() {
       />
 
       <Drawer.Screen
-        name="Acessórios"
+        name="ACESSÓRIOS"
         component={ProductScreen}
         initialParams={{
           category: "Acessórios",

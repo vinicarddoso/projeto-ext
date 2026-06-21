@@ -11,10 +11,11 @@ export default function HomeScreen() {
       onChangeText={setSearch}
       style={{
         borderWidth: 1,
-        borderColor: "#ccc",
+        borderColor: "#ffcced",
         borderRadius: 10,
         padding: 12,
         marginBottom: 20,
+        backgroundColor: "#f9f9f9",
       }}
     />
   );
