@@ -6,7 +6,6 @@ import CartScreen from "./src/screens/CartScreen";
 import BottomNav from "./src/components/BottomNav";
 import { styles } from "./src/styles";
 
-// Estado global compartilhado entre as telas (sem biblioteca externa)
 export default function App() {
   const [screen, setScreen] = useState("menu"); // "login" | "menu" | "cart"
   const [user, setUser] = useState(null);

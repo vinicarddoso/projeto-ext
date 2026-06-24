@@ -1,20 +1,19 @@
 import { useState } from "react";
 import {
   View, Text, ScrollView, TouchableOpacity, TextInput,
-  StyleSheet, SafeAreaView, StatusBar, FlatList,
-} from "react-native";
+  StyleSheet, SafeAreaView, StatusBar, FlatList, Image } from "react-native";
 
 const CATEGORIES = ["Todos", "Cílios", "Sobrancelhas", "Pele", "Kits"];
 
 const PRODUCTS = [
-  { id: 1, name: "Sérum Lash Growth", category: "Cílios", price: 89.9, icon: "💧", tag: "Mais vendido" },
-  { id: 2, name: "Máscara Volume Extreme", category: "Cílios", price: 64.9, icon: "✨", tag: null },
-  { id: 3, name: "Primer Fixador de Cílios", category: "Cílios", price: 49.9, icon: "👁️", tag: null },
-  { id: 4, name: "Gel para Sobrancelhas", category: "Sobrancelhas", price: 39.9, icon: "🌿", tag: "Novo" },
-  { id: 5, name: "Henna Natural Brow", category: "Sobrancelhas", price: 74.9, icon: "🍂", tag: null },
-  { id: 6, name: "Sérum Iluminador Facial", category: "Pele", price: 119.9, icon: "🌟", tag: "Novo" },
-  { id: 7, name: "Kit Lash Completo", category: "Kits", price: 199.9, icon: "🎁", tag: "Oferta" },
-  { id: 8, name: "Kit Brow & Lash", category: "Kits", price: 149.9, icon: "💼", tag: null },
+  { id: 1, name: "Cílios Russo", category: "Cílios", price: 89.9, image: require("../assets/ciliosRusso.png"), tag: "Mais vendido" },
+  { id: 2, name: "Máscara Volume Extreme", category: "Cílios", price: 64.9, image: require("../assets/mExtreme.png"), tag: null },
+  { id: 3, name: "Primer Fixador de Cílios", category: "Cílios", price: 49.9, image: require("../assets/primerFixador.png"), tag: null },
+  { id: 4, name: "Gel para Sobrancelhas", category: "Sobrancelhas", price: 39.9, image: require("../assets/gel.png"), tag: "Novo" },
+  { id: 5, name: "Henna Natural Brow", category: "Sobrancelhas", price: 74.9, image: require("../assets/Henna.png"), tag: null },
+  { id: 6, name: "Sérum Iluminador Facial", category: "Pele", price: 119.9, image: require("../assets/serum.png"), tag: "Novo" },
+  { id: 7, name: "Kit Lash Completo", category: "Kits", price: 199.9, image: require("../assets/kitLash.png"), tag: "Oferta" },
+  { id: 8, name: "Body Splash Vanilla", category: "Kits", price: 149.9, image: require("../assets/splashVanilla.png"), tag: null },
 ];
 
 function fmt(v) {
@@ -47,7 +46,6 @@ export default function HomeScreen({ user, cartCount, onAddToCart, onNavigateToC
       <View style={s.header}>
         <View>
           <Text style={s.brand}>RM Lash</Text>
-          <Text style={s.headerSub}>Olá, {firstName} 👋</Text>
         </View>
         <TouchableOpacity style={s.cartBtn} onPress={onNavigateToCart} accessibilityLabel="Ir para o carrinho">
           <Text style={s.cartIcon}>🛍️</Text>
@@ -60,7 +58,7 @@ export default function HomeScreen({ user, cartCount, onAddToCart, onNavigateToC
       </View>
 
       <View style={s.searchWrap}>
-        <Text style={s.searchIcon}>🔍</Text>
+        <Text style={s.searchIcon}></Text>
         <TextInput
           style={s.searchInput}
           placeholder="Buscar produto..."
@@ -107,7 +105,11 @@ export default function HomeScreen({ user, cartCount, onAddToCart, onNavigateToC
           return (
             <View style={s.productCard}>
               <View style={s.productImgWrap}>
-                <Text style={s.productIcon}>{item.icon}</Text>
+                <Image
+                  source={item.image}
+                  style={{ width: "100%", height: "100%" }}
+                  resizeMode="cover"
+                />
                 {item.tag && (
                   <View style={[s.tagBadge, item.tag === "Oferta" && s.tagBadgeOffer, item.tag === "Novo" && s.tagBadgeNew]}>
                     <Text style={[s.tagText, item.tag === "Oferta" && s.tagTextOffer, item.tag === "Novo" && s.tagTextNew]}>
@@ -159,7 +161,7 @@ const s = StyleSheet.create({
   gridContent: { paddingHorizontal: 20, paddingBottom: 16 },
   gridRow: { gap: 10, marginBottom: 10 },
   productCard: { flex: 1, backgroundColor: "#ffffff", borderWidth: 0.5, borderColor: "#D3D1C7", borderRadius: 12, padding: 14 },
-  productImgWrap: { height: 72, backgroundColor: "#F1EFE8", borderRadius: 8, alignItems: "center", justifyContent: "center", marginBottom: 10, position: "relative" },
+  productImgWrap: { height: 72, backgroundColor: "red", borderRadius: 8, alignItems: "center", justifyContent: "center", marginBottom: 10, position: "relative" },
   productIcon: { fontSize: 28 },
   tagBadge: { position: "absolute", top: 6, right: 6, backgroundColor: "#F1EFE8", borderRadius: 4, paddingHorizontal: 5, paddingVertical: 2 },
   tagBadgeOffer: { backgroundColor: "#FAECE7" },
@@ -168,9 +170,9 @@ const s = StyleSheet.create({
   tagTextOffer: { color: "#993C1D" },
   tagTextNew: { color: "#0F6E56" },
   productCat: { fontSize: 10, color: "#B4B2A9", textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 2 },
-  productName: { fontSize: 13, fontWeight: "500", color: "#1a1a18", lineHeight: 18, marginBottom: 10, minHeight: 36 },
+  productName: { fontSize: 15, fontWeight: "500", color: "#1a1a18", lineHeight: 18, marginBottom: 5, minHeight: 20 },
   productFooter: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
-  productPrice: { fontSize: 13, fontWeight: "500", color: "#1a1a18" },
+  productPrice: { fontSize: 18, fontWeight: "700", color: "#780090" },
   addBtn: { width: 28, height: 28, backgroundColor: "#2C2C2A", borderRadius: 7, alignItems: "center", justifyContent: "center" },
   addBtnDone: { backgroundColor: "#0F6E56" },
   addBtnText: { color: "#F1EFE8", fontSize: 18, lineHeight: 22 },

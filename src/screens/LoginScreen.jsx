@@ -46,11 +46,7 @@ export default function LoginScreen({ onLogin }) {
         <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
 
           <View style={s.logoWrap}>
-            <View style={s.logoCircle}>
-              <Text style={s.logoEmoji}>✨</Text>
-            </View>
             <Text style={s.brand}>RM Lash</Text>
-
           </View>
 
           <View style={s.card}>

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { View, Text, ScrollView, TouchableOpacity, TextInput, SafeAreaView, StatusBar } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, TextInput, SafeAreaView, StatusBar, Image } from "react-native";
 import { styles } from "../styles";
 
 const INITIAL_ITEMS = [
-  { id: 1, name: "Body Splash Vanilla", variant: "100 ml · Body Splash", price: 89.9, qty: 1, icon: "💧" },
-  { id: 2, name: "Máscara Volume Extreme", variant: "9 g · Preto intenso", price: 64.9, qty: 2, icon: "✨" },
-  { id: 3, name: "Primer Fixador de Cílios", variant: "8 ml · Universal", price: 49.9, qty: 1, icon: "👁️" },
+  { id: 1, name: "Body Splash Vanilla", variant: "100 ml · Pele", price: 149.90, qty: 1, image: require("../assets/splashVanilla.png") },
+  { id: 2, name: "Máscara Volume Extreme", variant: "9 g · Preto intenso", price: 64.9, qty: 2, image: require("../assets/mExtreme.png") },
+  { id: 3, name: "Primer Fixador de Cílios", variant: "8 ml · Universal", price: 49.9, qty: 1, image: require("../assets/primerFixador.png") },
 ];
 
 const VALID_COUPON = "LASH10";
@@ -21,7 +21,11 @@ function CartItem({ item, onChangeQty, onRemove }) {
   return (
     <View style={styles.itemCard}>
       <View style={styles.itemImg}>
-        <Text style={styles.itemIcon}>{item.icon}</Text>
+        <Image
+          source={item.image}
+          style={{ width: "100%", height: "100%" }}
+          resizeMode="cover"
+        />
       </View>
 
       <View style={styles.itemInfo}>
