@@ -1,8 +1,6 @@
-# Projeto Extensão - Aplicativo Mobile para Gestão de Estoque para Loja de Cosméticos
+# Projeto Extensão - Aplicativo mobile para gestão de estoque para loja de cosméticos
 
-Aplicativo desenvolvido em **React Native** utilizando **Expo** como parte de um Projeto de Extensão Universitária.
-
-O sistema foi criado para auxiliar pequenos empreendedores e lojas do ramo de cosméticos no gerenciamento de produtos, proporcionando uma solução simples, acessível e intuitiva para o controle de estoque através de dispositivos móveis.
+Aplicativo desenvolvido em **React Native** utilizando **Expo** como parte de um projeto de extensão universitária.
 
 ---
 
@@ -69,65 +67,7 @@ projeto-ext/
 
 ---
 
-## Instalação
-
-### Clone o repositório
-
-```bash
-git clone https://github.com/vinicarddoso/projeto-ext.git
-```
-
-### Acesse a pasta do projeto
-
-```bash
-cd projeto-ext
-```
-
-### Instale as dependências
-
-```bash
-npm install
-```
-
-### Execute o projeto
-
-```bash
-npm start
-```
-
-ou
-
-```bash
-npx expo start
-```
-
----
-
-## Executando no Android
-
-```bash
-npm run android
-```
-
-## Executando no iOS
-
-```bash
-npm run ios
-```
-
-## Executando na Web
-
-```bash
-npm run web
-```
-
----
-
 ## 👨‍💻 Equipe
-
-Projeto desenvolvido por estudantes da disciplina de Programação para Dispositivos Móveis como atividade de extensão universitária.
-
-### Integrantes
 
 - Vinícius Cardoso Miranda // @vinicarddoso
 - Luiz Felipe Guedes Rodrigues // @felipeguedes0410
